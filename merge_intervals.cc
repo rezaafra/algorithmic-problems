@@ -28,7 +28,8 @@ public:
              });
         
         // merge the adjacent overlapping intervals
-        // initialize the merged_intervals with the first interval fromt he sorted vector
+     =================================================================
+        // initialize the merged_intervals with the first interval fromt the sorted vector
         vector<vector<int>> merged_intervals {intervals.front()};  
         
         for (const auto& current_interval: intervals) {

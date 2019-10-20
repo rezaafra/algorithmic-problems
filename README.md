@@ -1,2 +1,2 @@
 # algorithmic-problems
-A repository to my solutions to some algorithms and data structures problems
+A repository of my solutions to some algorithms and data structures problems

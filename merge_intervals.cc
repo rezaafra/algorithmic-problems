@@ -12,6 +12,8 @@ Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
 
 Runtime: 16 ms, faster than 93.93% of C++ online submissions for Merge Intervals.
 Memory Usage: 12.2 MB, less than 100.00% of C++ online submissions for Merge Intervals.
+Time complexity: O(nlog(n))
+Space complexity: O(1)
 */
 
 class Solution {
@@ -27,7 +29,7 @@ public:
                  return interval_1.at(0) < interval_2.at(0);
              });
         
-        // merge the adjacent overlapping intervals
+        // merge the adjacent overlapping intervals O(n)
      =================================================================
         // initialize the merged_intervals with the first interval fromt the sorted vector
         vector<vector<int>> merged_intervals {intervals.front()};  

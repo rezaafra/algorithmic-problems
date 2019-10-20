@@ -37,7 +37,6 @@ public:
         for (const auto& current_interval: intervals) {
             auto& last_merged_interval = merged_intervals.back();
             
-
             if (current_interval.at(0) <= last_merged_interval.at(1)) {
                 // merge the intervals if they overlap
                 last_merged_interval.at(1) = max(current_interval.at(1), last_merged_interval.at(1));

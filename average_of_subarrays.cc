@@ -1,16 +1,26 @@
 /* 
-Find the average of k (positive integer [1, nums.size()]) consecutive elements of an array. "Sliding window" technique
-has been used.
+Find the average of k (positive integer [1, nums.size()]) consecutive elements of an array. 
+"Sliding window" technique was used.
 Time complexity: O(n)
 Space complexity: O(n)
 */ 
+
 
 #include <algorithm>
 #include <iostream>
 #include <numeric>
 #include <vector>
 
-std::vector<double> findSuseqAverages(size_t k, const std::vector<int>& nums) {
+
+std::vector<double> findSuseqAverages(size_t k, const std::vector<double>& nums) {
+  if(k == 0 || k > nums.size()) { // invalid input
+    throw std::invalid_argument( "received invalid input");
+  }
+
+  if (k == 1) {
+      return nums;
+  }
+
   std::vector<double> res(nums.size() - k + 1); // Allocate space to avoid resizing
   auto left_it = nums.begin();
   auto right_it = std::next(left_it, k);
@@ -30,7 +40,7 @@ std::vector<double> findSuseqAverages(size_t k, const std::vector<int>& nums) {
 }
 
 int main() {
-  std::vector<int> nums{1, 2, 3, 4, 5};
+  std::vector<double> nums{1, 2, 3, 4, 5};
   size_t k = 3;
   std::vector<double> averages = findSuseqAverages(k, nums);
 
